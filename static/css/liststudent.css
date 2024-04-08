@@ -1,0 +1,93 @@
+.filter-div {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    flex-wrap: wrap;
+    /* gap: 1vw; */
+    width: 90vw;
+    margin: auto;
+    /* border: 1px solid blue; */
+    justify-content: center; /* Horizontally center the items */
+    align-items: center; /* Vertically center the items */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Adjust the opacity as needed */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-div label {
+    min-width: 12vw;
+    min-height: 2vw;
+    flex: 1;
+    /* border: 1px solid red; */
+    font-size: 16px;
+    color: #333;
+}
+
+.filter-div input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Glassmorphism effect for the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    scroll-behavior: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #ffffff1a;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+tr:hover{
+    min-width: 20rem;
+    color:blue;
+}
+th {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+thead th {
+    z-index: 1; /* Ensures that the sticky header is above the table content */
+}
+.table-div {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap; /* Prevent line breaks for long content */
+}
+

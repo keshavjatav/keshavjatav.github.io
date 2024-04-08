@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<link rel="apple-touch-icon" sizes="180x180" href="static/icons/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon//favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon//favicon-16x16.png">
+	<link rel="manifest" href="static/icons/favicon//site.webmanifest">
+	<link rel="mask-icon" href="static/icons/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="/web/static/css/style.css">
+    <link rel="stylesheet" href="/web/static/css/student.css">
+    <script src="/web/static/script/script.js"></script>
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+    <title>Responsive Side Navigation</title>
+    <style>
+        <?php 
+        include "static/css/style.css";
+        include "static/css/student.css";?>
+    </style>
+</head>
+<body>
+<div class="sidenav" id="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <hr>
+        <a href="/web/dashboard.php">DashBoard</a>
+        <hr>
+        <a href="javascript:void(0)" onclick="showStudentSubnav()">Student Module</a>
+        <div class="subnav hidden" id="student-module" >
+        <a href="addstudent.php">Add Student</a>
+            <a href="/web/student/updatestudent.php">Update Student</a>
+            <a href="/web/student/deletestudent.php">Delete Student</a>
+            <a href="/web/student/liststudents.php">List Students</a>
+        </div>
+        <hr>
+        <a href="javascript:void(0)" onclick="showTeacherSubnav()">Teacher Module</a>
+        <div class="subnav hidden" id="teacher-module">
+            <a href="">Add Teacher</a>
+            <a href="">Update Teacher</a>
+            <a href="">Delete Teacher</a>
+            <a href="">List Teacher</a>
+        </div>
+        <hr>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#logout">Logout</a>
+    </div>
+
+    <div class="content" id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <div id="head-div"><p>Add Student</p></div>
+        <!-- <span></span> -->
+        <!-- <p>This is the content area. You can add your content here.</p> -->
+        <!-- Add your delete student form here -->
+        <form action="delete_student.php" method="POST">
+            <!-- Include the necessary input fields and buttons -->
+            <div class="entry-div">
+                <label for="student-id">Student ID to Delete</label>
+                <input type="text" name="student-id" id="student-id" placeholder="Enter Student ID">
+            </div>
+            <div class="entry-div">
+                <input type="submit" value="Delete Student" id="delete-button" style=":hover{background-color:#f44336;}">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

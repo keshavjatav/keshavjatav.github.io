@@ -1,0 +1,164 @@
+/* Set background color and font family for the entire body */
+body {
+    background-color: #87CEEB; /* Sky Blue */
+    font-family: Arial, sans-serif;
+}
+
+/* Style the content container */
+.content {
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Glassmorphism effect */
+    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(5px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Glassmorphism effect */
+}
+
+/* Style the main entry div */
+.main-entry-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+    width: 90vw;
+    margin: auto;
+    justify-content: center; /* Horizontally center the items */
+    align-items: center; /* Vertically center the items */
+}
+
+/* Style individual entry divs */
+.entry-div {
+    flex: 1;
+    min-width: 20vw;
+    min-height: 5vh;
+    /* border: 1px solid blue; */
+    align-items: center;
+}
+
+/* Style labels within entry divs */
+.entry-div label {
+    display: table-cell;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+/* Style input fields, selects, and textareas within entry divs */
+.entry-div input[type="text"],
+.entry-div input[type="email"],
+.entry-div input[type="date"],
+.entry-div select,
+.entry-div textarea {
+    display: table-cell;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style buttons within entry divs */
+.entry-div button,
+.entry-div input[type="submit"] {
+    display: table-cell;
+    padding: 10px;
+    /* background-color: #007bff; */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Hover effect for buttons */
+.entry-div button:hover,
+.entry-div input[type="submit"]:hover {
+    /* background-color: #0056b3; */
+}
+
+/* Style images within entry divs */
+.entry-div img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Apply glassmorphism effect to form inputs */
+.entry-div input[type="text"],
+.entry-div input[type="email"],
+.entry-div input[type="date"],
+.entry-div select,
+.entry-div textarea,
+.entry-div input[type="submit"] {
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white border */
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Glassmorphism effect */
+}
+
+/* Style placeholders */
+::placeholder {
+    font-style: italic; /* Placeholder font style */
+    font-weight: bold;
+}
+
+/* Style placeholders for specific input types or IDs */
+#scholar-number::placeholder {
+    font-weight: bold; /* Example of styling a specific input's placeholder */
+}
+
+/* Style placeholders for all inputs within .entry-div */
+.entry-div input::placeholder,
+.entry-div textarea::placeholder {
+    font-style: normal; /* Resetting font style for placeholders within .entry-div */
+    color: #GRAY; /* Custom color for placeholders within .entry-div */
+    font-weight: bold;
+}
+
+
+.entry-div button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Glassmorphism effect */
+}
+
+.entry-div button:hover {
+    background-color: #0056b3; /* Hover background color */
+}
+
+
+/* Glassmorphism Effect */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    width: 200px;
+    height: 20px;
+    border: none;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Styling for options */
+.glassmorphism option {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    padding: 5px;
+}
+#delete-button:hover{
+    background-color: #f44336;
+}

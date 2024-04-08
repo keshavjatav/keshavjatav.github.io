@@ -1,1 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #007bff; /* Sky Blue */
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* background-color: rgba(135, 206, 235, 0.8); Semi-transparent sky blue */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Glassmorphism effect */
+}
+
+.sidenav a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: green;
+}
+
+.closebtn:hover {
+    background-color: #333;
+}
+
+.subnav {
+    margin-left: 20px;
+    /* background-color: rgba(135, 206, 235, 0.8);  */
+    background-color: #007bff;
+    /* Semi-transparent sky blue */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.content {
+    padding: 20px;
+    transition: margin-left 0.5s ease-in-out;
+    /* background-color: rgba(135, 206, 235, 0.8); Semi-transparent sky blue */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Glassmorphism effect */
+    border-radius: 20px;
+}
+
+#slideshow {
+    max-width: 100%;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    object-fit: cover;
+    /* object-fit: scale-down; */
+    /* object-fit: contain; */
+    transition: step-start 0.5s ease; /* Transition effect */
+}
+
+.quick-info-div {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    flex-wrap: wrap;
+    gap: 2vw;
+    width: 90vw;
+    margin: auto;
+    border: 1px solid blue;
+    justify-content: center; /* Horizontally center the items */
+    align-items: center; /* Vertically center the items */
+}
+
+.info-div {
+    min-width: 20vw;
+    min-height: 20vw;
+    flex: 1;
+    border: 1px solid red;
+    background-color: rgba(135, 206, 235, 0.8); /* Semi-transparent sky blue */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Glassmorphism effect */
+}
+
+#head-div {
+    background-color: rgba(135, 206, 235, 0.3); 
+    /* Semi-transparent sky blue */
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    min-width: 90vw;
+    max-width: 80vw;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Glassmorphism effect */
+    margin-bottom: 5vh;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+#head-div p {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #333; /* Dark text color */
+}
+
+/* Your CSS Styles */
+  .dropdown-icon {
+    position: absolute;
+    right: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Define the keyframe animation */
+  @keyframes rotateIcon {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+  }
+
+  /* Add additional styles for the active state of the submenu */
+  .subnav.active .dropdown-icon {
+    animation: rotateIcon 0.3s forwards; /* Run the animation */
+  }
+
+  #que-hr-line{
+    color: black;
+    margin-top: 20px;
+  }
