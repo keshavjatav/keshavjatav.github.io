@@ -39,18 +39,6 @@ function showSlide(index) {
   slides[index].style.display = 'block'; // Display the slide at the specified index
 }
 
-// Function to show the next slide
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length; // Increment the slide index, looping back to 0 if reached the end
-  showSlide(currentSlide); // Show the next slide
-}
-
-// Function to show the previous slide
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Decrement the slide index, looping to the last slide if reached the beginning
-  showSlide(currentSlide); // Show the previous slide
-}
-
 // Function to start the slideshow
 function startSlideshow() {
   showSlide(currentSlide); // Show the initial slide
@@ -80,28 +68,3 @@ getRandomColor();
 // Start the slideshow
 startSlideshow();
 
-// Get the select element for bank name
-var selectElement = document.getElementById("bank-name");
-
-// Add event listener for change event
-selectElement.addEventListener("change", function() {
-  // Get the selected option
-  var selectedOption = selectElement.options[selectElement.selectedIndex].value;
-  var bank_account_name = document.getElementById("bank-account-name");
-
-  // Perform actions based on selected option
-  switch (selectedOption) {
-      case "sbi":
-          bank_account_name.value = "State Bank of India"; // Set bank account name based on selected option
-          break;
-      case "ubi":
-          bank_account_name.value = "Union Bank of India"; // Set bank account name based on selected option
-          break;
-      case "none":
-          bank_account_name.disabled =  false; // Enable the bank account name input field
-          bank_account_name.value = ""; // Clear the bank account name value
-          break;
-      default:
-          bank_account_name.value = selectedOption; // Set bank account name based on selected option
-  }
-});
