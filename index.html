@@ -187,6 +187,18 @@
         window.location.href = "dashboard.html"; // Change "new_page.html" to the URL of your new page
         console.log("Login form submitted.");
     });
+        fetch("data/users.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error
+                            (`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((data) => 
+                      console.log(data))
+                .catch((error) => 
+                       console.error("Unable to fetch data:", error));
 </script>
 
 </body>
