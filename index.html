@@ -187,21 +187,40 @@
         window.location.href = "dashboard.html"; // Change "new_page.html" to the URL of your new page
         console.log("Login form submitted.");
     });
-    function fetchJsonData(){
-        fetch("data/users.json")
-                .then((res) => {
-                    if (!res.ok) {
-                        throw new Error
-                            (`HTTP error! Status: ${res.status}`);
-                    }
-                    return res.json();
-                })
-                .then((data) => 
-                      console.log(data))
-                .catch((error) => 
-                       console.error("Unable to fetch data:", error));
+    async function fetchData() {
+    try {
+        const response = await fetch("data/users.json");
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Unable to fetch data:", error);
+        return null; // or handle the error as needed
     }
-    console.log(fetchJsonData());
+}
+
+async function fetchJsonData() {
+    const data = await fetchData();
+    return data;
+}
+
+// Modified getData function to return the fetched data
+async function getData() {
+    const jsonData = await fetchJsonData();
+    return jsonData; // Return the fetched data
+}
+
+// Call getData and store the result in a variable
+async function processData() {
+    const fetchedData = await getData();
+    console.log(fetchedData);
+    // You can use fetchedData here or pass it to another function for further processing
+}
+
+processData();
+
 </script>
 
 </body>
