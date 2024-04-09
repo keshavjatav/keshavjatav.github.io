@@ -352,7 +352,43 @@
     </div>
 </body>
 </html>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector('form');
 
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // Get form data
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                // Convert data to JSON
+                const jsonData = JSON.stringify(data, null, 2);
+
+                // Save JSON data to a file
+                download(jsonData, 'data/school.json', 'application/json');
+            });
+
+            // Function to download data as a file
+            function download(data, filename, type) {
+                const file = new Blob([data], { type: type });
+                const a = document.createElement('a');
+                const url = URL.createObjectURL(file);
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 0);
+            }
+        });
+    </script>
 
 
 <!-- mysql query
