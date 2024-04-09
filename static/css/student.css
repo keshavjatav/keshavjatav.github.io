@@ -162,3 +162,14 @@ body {
 #delete-button:hover{
     background-color: #f44336;
 }
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    .main-entry-div {
+        flex-direction: column;
+        width: 100%;
+    }
+    .entry-div {
+        min-width: 100%;
+    }
+}
