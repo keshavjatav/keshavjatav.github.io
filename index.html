@@ -181,52 +181,55 @@
         passwordField.type = this.checked ? "text" : "password";
     });
 
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        // You can add your login form submission logic here
-        window.location.href = "dashboard.html"; // Change "new_page.html" to the URL of your new page
-        console.log("Login form submitted.");
-    });
     async function fetchData() {
-    try {
-        const response = await fetch("data/users.json");
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            try {
+                const response = await fetch("data/users.json");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Unable to fetch data:", error);
+                return null; // or handle the error as needed
+            }
         }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error("Unable to fetch data:", error);
-        return null; // or handle the error as needed
-    }
-}
 
-async function fetchJsonData() {
-    const data = await fetchData();
-    return data;
-}
+        async function fetchJsonData() {
+            const data = await fetchData();
+            return data;
+        }
 
-// Modified getData function to return the fetched data
-async function getData() {
-    const jsonData = await fetchJsonData();
-    return jsonData; // Return the fetched data
-}
+        async function getData() {
+            const jsonData = await fetchJsonData();
+            return jsonData;
+        }
 
-// Call getData and store the result in a variable
-async function processData() {
-    const fetchedData = await getData();
-    console.log(fetchedData);
-    fetchedData.forEach(element => {
-            console.log(element);
+        async function processData(username, password) {
+            const fetchedData = await getData();
+            if (!fetchedData) {
+                console.error("No data fetched.");
+                return false;
+            }
+
+            const users = fetchedData.users;
+            const foundUser = users.find(user => user.username === username && user.password === password);
+
+            if (foundUser) {
+                console.log("Login successful!");
+                window.location.href = "dashboard.html"; // Redirect to dashboard
+            } else {
+                console.log("Invalid username or password.");
+                // Add your error handling logic here
+            }
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            processData(username, password);
         });
-    // You can use fetchedData here or pass it to another function for further processing
-}
-
-const data = processData();
-// data.forEach(e=>{
-//     console.log(e);
-// });
-
 </script>
 
 </body>
