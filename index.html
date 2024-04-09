@@ -219,7 +219,10 @@ async function processData() {
     // You can use fetchedData here or pass it to another function for further processing
 }
 
-processData();
+const data = processData();
+data.forEach(e=>{
+    console.log(e);
+});
 
 </script>
 
