@@ -216,13 +216,16 @@ async function getData() {
 async function processData() {
     const fetchedData = await getData();
     console.log(fetchedData);
+    fetchedData.forEach(element => {
+            console.log(element);
+        });
     // You can use fetchedData here or pass it to another function for further processing
 }
 
 const data = processData();
-data.forEach(e=>{
-    console.log(e);
-});
+// data.forEach(e=>{
+//     console.log(e);
+// });
 
 </script>
 
